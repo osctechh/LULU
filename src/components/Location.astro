@@ -1,0 +1,182 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`invitation-section ${className}`}>
+  <div class="invitation-card fade-in">
+    <h2 class="invitation-title">¡Te esperamos!</h2>
+    <p class="invitation-subtitle">
+      Ven a celebrar este día especial con nosotros
+    </p>
+
+    <div class="location-details">
+      <div class="location-item">
+        <span class="location-icon">📅</span>
+        <div class="location-info">
+          <p class="location-label">Fecha</p>
+          <p class="location-value">Sábado 15 de AGOSTO</p>
+        </div>
+      </div>
+
+      <div class="location-item">
+        <span class="location-icon">⏰</span>
+        <div class="location-info">
+          <p class="location-label">Hora</p>
+          <p class="location-value">14:00 horas</p>
+        </div>
+      </div>
+
+      <div class="location-item">
+        <span class="location-icon">📍</span>
+        <div class="location-info">
+          <p class="location-label">Lugar</p>
+          <p class="location-value">Salón de Fiestas "KARAMBA"</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-container">
+      <a
+        href="https://www.google.com/maps/place/Karamba+salon+de+fiestas+infantiles/@-39.0232164,-67.5848462,17z/data=!3m1!4b1!4m6!3m5!1s0x960a1d3a355930d7:0x43e753bccf0b5ed1!8m2!3d-39.0232206!4d-67.5822713!16s%2Fg%2F11h05cw3rr?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="map-link"
+      >
+        <div class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <p class="map-text">Click para ver el mapa</p>
+          <p class="map-subtext">Cómo llegar</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="rsvp-section">
+      <p class="rsvp-text">
+        Por favor confirmar asistencia antes del 15 de AGOSTO
+      </p>
+      <a href="tel:+542954550225" class="rsvp-button">
+        📞 Confirmar por WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .location-details {
+    margin: 2rem 0;
+  }
+
+  .location-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--background-dark);
+    border-radius: 0.75rem;
+  }
+
+  .location-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  .location-info {
+    flex: 1;
+  }
+
+  .location-label {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+
+  .location-value {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+  }
+
+  .map-container {
+    margin: 2rem 0;
+  }
+
+  .map-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  .map-placeholder {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .map-placeholder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
+  }
+
+  .map-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .map-text {
+    font-family: var(--font-festive);
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .map-subtext {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .rsvp-section {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .rsvp-text {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .rsvp-button {
+    display: inline-block;
+    background: var(--success-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .rsvp-button:hover {
+    background: #059669;
+    transform: scale(1.05);
+  }
+</style>
