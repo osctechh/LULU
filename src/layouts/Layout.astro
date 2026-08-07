@@ -12,8 +12,26 @@
     <audio
       id="background-music"
       src="/Diego Topa - GANAS DE APLAUDIR (Official Video).mp3"
-      loop
-      autoplay></audio>
+      loop></audio>
+
+    <div
+      id="welcome-overlay"
+      style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 99999; cursor: pointer;"
+    >
+      <h1
+        style="font-family: 'Pacifico', cursive; font-size: 3rem; color: white; margin-bottom: 1rem; text-align: center;"
+      >
+        🎉 Mi Primer Añito 🎉
+      </h1>
+      <p
+        style="font-family: 'Quicksand', sans-serif; font-size: 1.5rem; color: white; margin-bottom: 2rem;"
+      >
+        Haz clic para entrar a la fiesta
+      </p>
+      <div style="font-size: 4rem; animation: bounce 1s ease-in-out infinite;">
+        👶
+      </div>
+    </div>
 
     <div
       class="music-control"
@@ -24,7 +42,7 @@
         class="music-button"
         style="background: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.25rem; cursor: pointer;"
       >
-        🎵
+        🔇
       </button>
       <input
         type="range"
@@ -41,18 +59,21 @@
     <slot />
 
     <script is:inline>
-      console.log("Music control script loaded");
       const audio = document.getElementById("background-music");
       const toggleButton = document.getElementById("music-toggle");
       const volumeControl = document.getElementById("volume-control");
+      const welcomeOverlay = document.getElementById("welcome-overlay");
 
-      console.log("Audio:", audio);
-      console.log("Button:", toggleButton);
-      console.log("Volume:", volumeControl);
-
-      if (audio && toggleButton && volumeControl) {
+      if (audio && toggleButton && volumeControl && welcomeOverlay) {
         // Configurar volumen inicial
         audio.volume = 0.5;
+
+        // Manejar el overlay de bienvenida
+        welcomeOverlay.addEventListener("click", () => {
+          audio.play();
+          welcomeOverlay.style.display = "none";
+          toggleButton.textContent = "🎵";
+        });
 
         // Toggle play/pause
         toggleButton.addEventListener("click", () => {
