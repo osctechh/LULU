@@ -234,33 +234,62 @@ a:hover {
 /* Títulos de invitación */
 .invitation-title {
   font-family: var(--font-festive);
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   color: var(--primary-color);
   margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .invitation-title {
+    font-size: 2.5rem;
+  }
 }
 
 .invitation-subtitle {
   font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--text-light);
   margin-bottom: 1.5rem;
   font-weight: 600;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .invitation-subtitle {
+    font-size: 1.25rem;
+  }
 }
 
 .invitation-number {
   font-family: var(--font-festive);
-  font-size: 4rem;
+  font-size: 2.5rem;
   color: var(--accent-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .invitation-number {
+    font-size: 4rem;
+  }
 }
 
 /* Contador regresivo */
 .countdown-container {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.75rem;
   margin-top: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .countdown-container {
+    gap: 1.5rem;
+  }
 }
 
 .countdown-item {
@@ -268,26 +297,46 @@ a:hover {
   flex-direction: column;
   align-items: center;
   background: var(--background-color);
-  padding: 1rem;
-  border-radius: 1rem;
-  min-width: 80px;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  min-width: 60px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 2px solid var(--border-color);
 }
 
+@media (min-width: 768px) {
+  .countdown-item {
+    padding: 1rem;
+    min-width: 80px;
+    border-radius: 1rem;
+  }
+}
+
 .countdown-number {
   font-family: var(--font-festive);
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
   line-height: 1;
 }
 
+@media (min-width: 768px) {
+  .countdown-number {
+    font-size: 2.5rem;
+  }
+}
+
 .countdown-label {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: var(--text-light);
   margin-top: 0.5rem;
   font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .countdown-label {
+    font-size: 0.875rem;
+  }
 }
 
 /* Utilidad para ocultar elementos */

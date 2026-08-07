@@ -6,41 +6,53 @@ const { class: className = "" } = Astro.props;
 ---
 
 <div class={`invitation-section ${className}`}>
-  <div class="invitation-card fade-in">
-    <h2 class="invitation-title">Palabras para nuestra princesa</h2>
-    <p class="festive-text">
+  <div class="invitation-card fade-in px-4 md:px-8">
+    <h2 class="invitation-title">Palabras para mi princesa</h2>
+    <p class="festive-text text-sm md:text-base">
       En este primer año de vida, has llenado nuestros días de alegría, sonrisas
       y amor infinito. Cada logro tuyo es una celebración, cada risa una melodía
       que alegra nuestro hogar.
     </p>
-    <p class="festive-text">
+    <p class="festive-text text-sm md:text-base">
       Hoy celebramos no solo un año más, sino el milagro de tu existencia, el
       regalo de tenerte en nuestras vidas y la felicidad de verte crecer llena
       de luz y ternura.
     </p>
-    <p class="festive-text">
+    <p class="festive-text text-sm md:text-base">
       Gracias por ser nuestra pequeña maravilla, por enseñarnos el verdadero
       significado del amor y por hacer de cada momento un recuerdo precioso.
     </p>
-    <div class="heart-icon">💕</div>
+    <div class="heart-icon text-3xl md:text-4xl">💕</div>
   </div>
 </div>
 
 <style>
   .festive-text {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-color);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     text-align: center;
   }
 
+  @media (min-width: 768px) {
+    .festive-text {
+      font-size: 1.1rem;
+    }
+  }
+
   .heart-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
     margin-top: 1rem;
     animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  @media (min-width: 768px) {
+    .heart-icon {
+      font-size: 3rem;
+    }
   }
 
   @keyframes heartbeat {

@@ -7,21 +7,35 @@ const { class: className = "" } = Astro.props;
 ---
 
 <div class={`flex flex-col items-center ${className}`}>
-  <div class="flex gap-20">
-    <img src={margaritaSrc} alt="" class="margarita-img opacity-60" />
+  <div class="flex gap-8 md:gap-20">
     <img
       src={margaritaSrc}
       alt=""
-      class="margarita-img margarita-yellow opacity-60"
+      class="margarita-img opacity-60 w-24 md:w-48"
     />
-    <img src={margaritaSrc} alt="" class="margarita-img opacity-60" />
+    <img
+      src={margaritaSrc}
+      alt=""
+      class="margarita-img margarita-yellow opacity-60 w-24 md:w-48"
+    />
+    <img
+      src={margaritaSrc}
+      alt=""
+      class="margarita-img opacity-60 w-24 md:w-48"
+    />
   </div>
 </div>
 
 <style>
   .margarita-img {
-    width: 200px;
+    width: 100px;
     height: auto;
+  }
+
+  @media (min-width: 768px) {
+    .margarita-img {
+      width: 200px;
+    }
   }
 
   .margarita-yellow {
@@ -29,6 +43,6 @@ const { class: className = "" } = Astro.props;
   }
 
   .margarita-margin-top {
-    margin-bottom: 2rem;
+    margin-top: 2rem;
   }
 </style>
