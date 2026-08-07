@@ -1,5 +1,5 @@
 /* Importar fuente festiva de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap");
 
 /* Reset básico */
 * {
@@ -21,9 +21,9 @@
   --success-color: #10b981;
   --error-color: #ef4444;
   --warning-color: #f59e0b;
-  
-  --font-festive: 'Pacifico', cursive;
-  --font-body: 'Quicksand', sans-serif;
+
+  --font-festive: "Pacifico", cursive;
+  --font-body: "Quicksand", sans-serif;
 }
 
 /* Estilos base */
@@ -32,9 +32,45 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
-  margin-top: 2rem;
 }
 
+/* Control de música */
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  padding: 1rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
+  z-index: 1000;
+}
+
+.music-button {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.music-button:hover {
+  transform: scale(1.1);
+  background: var(--background-dark);
+}
+
+.volume-slider {
+  width: 100px;
+  cursor: pointer;
+}
 
 /* Botones */
 button {
@@ -280,7 +316,8 @@ a:hover {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -368,7 +405,7 @@ a:hover {
 }
 
 /* Segunda fila de serpentinas */
-.celebration-container .confetti:nth-child(n+12) {
+.celebration-container .confetti:nth-child(n + 12) {
   top: -50px;
 }
 
